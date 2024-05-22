@@ -46,7 +46,7 @@ if (padLocalToken) {
 
 
 bot.use(WechatyWebPanelPlugin({
-    apiKey: '***', apiSecret: '****',
+    apiKey: process.env['APIKEY'], apiSecret: process.env['APISECRET'],
 }))
 bot.start()
     .catch((e) => console.error(e));
