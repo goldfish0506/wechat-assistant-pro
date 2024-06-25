@@ -1,5 +1,5 @@
 import {WechatyBuilder} from 'wechaty'
-import {WechatyWebPanelPlugin} from 'wechaty-web-panel'
+import {WechatyWebPanelPlugin, WechatyMessageRecordPlugin} from 'wechaty-web-panel'
 
 const name = 'wechat-assistant-pro';
 let bot = '';
@@ -48,5 +48,6 @@ if (padLocalToken) {
 bot.use(WechatyWebPanelPlugin({
     apiKey: process.env['APIKEY'], apiSecret: process.env['APISECRET'],
 }))
+bot.use(WechatyMessageRecordPlugin())
 bot.start()
     .catch((e) => console.error(e));
