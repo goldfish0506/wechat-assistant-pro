@@ -50,9 +50,9 @@ if (officeAppId) {
     bot = startWechat4u()
 }
 
-
+ 
 bot.use(WechatyWebPanelPlugin({
-    apiKey: '填入微秘书平台apikey', apiSecret: '填入微秘书平台apisecret',
+    apiKey: process.env['APIKEY'], apiSecret: process.env['APISECRET'],
 }))
 bot.use(WechatyMessageRecordPlugin())
 bot.start()
